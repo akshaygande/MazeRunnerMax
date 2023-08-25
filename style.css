@@ -12,8 +12,8 @@ body {
 }
 
 canvas {
-  width: 58vw;
-  height: 90vh;
+  width: 100vw;
+  height: 100vh;
   display: block;
   margin: 40px auto 20px;
   border: transparent;
@@ -68,4 +68,47 @@ a {
 
 .control-btn:active {
   opacity: 1;
+}
+
+#left-btn, #right-btn {
+  position: absolute;
+  bottom: 10px;
+  width: 60px;  /* Increased button size */
+  height: 60px;  /* Increased button size */
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;  /* Slightly increased font size */
+  opacity: 0.8;
+  transition: opacity 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#left-btn {
+  left: 5%;
+}
+
+#right-btn {
+  left: 15%;  /* Increased space between buttons */
+}
+
+#jump-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 5%;
+  width: 80px;  /* Increased button size */
+  height: 80px;  /* Increased button size */
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;  /* Slightly increased font size */
+  opacity: 0.8;
+  transition: opacity 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
