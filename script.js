@@ -874,35 +874,65 @@ var Loop = function() {
 Loop();
 
 
-document.getElementById('left-btn').addEventListener('touchstart', function() {
+document.getElementById('left-btn').addEventListener('mousedown', function() {
     // Logic for moving left
-    this.key.left = true;
+    game.key.left = true;
 });
 
-document.getElementById('left-btn').addEventListener('touchend', function() {
+document.getElementById('left-btn').addEventListener('mouseup', function() {
     // Logic for stopping left movement
-    this.key.left = false;
+    game.key.left = false;
 });
 
-document.getElementById('right-btn').addEventListener('touchstart', function() {
+document.getElementById('right-btn').addEventListener('mousedown', function() {
     // Logic for moving right
-    this.key.right = true;
+    game.key.right = true;
 });
 
-document.getElementById('right-btn').addEventListener('touchend', function() {
+document.getElementById('right-btn').addEventListener('mouseup', function() {
     // Logic for stopping right movement
-    this.key.right = false;
+    game.key.right = false;
 });
 
-document.getElementById('jump-btn').addEventListener('touchstart', function() {
+document.getElementById('jump-btn').addEventListener('mousedown', function() {
     // Logic for jumping
-    if (this.player.can_jump) {
-        this.key.up = true;
-        this.player.can_jump = false;
+    if (game.player.can_jump) {
+        game.key.up = true;
+        game.player.can_jump = false;
     }
 });
 
-document.getElementById('jump-btn').addEventListener('touchend', function() {
+document.getElementById('jump-btn').addEventListener('mouseup', function() {
     // Logic for stopping jump
-    this.key.up = false;
+    game.key.up = false;
+});
+
+document.getElementById('left-btn').addEventListener('touchstart', function(event) {
+    event.preventDefault();
+    game.key.left = true;
+});
+document.getElementById('left-btn').addEventListener('touchend', function(event) {
+    event.preventDefault();
+    game.key.left = false;
+});
+
+document.getElementById('right-btn').addEventListener('touchstart', function(event) {
+    event.preventDefault();
+    game.key.right = true;
+});
+document.getElementById('right-btn').addEventListener('touchend', function(event) {
+    event.preventDefault();
+    game.key.right = false;
+});
+
+document.getElementById('jump-btn').addEventListener('touchstart', function(event) {
+    event.preventDefault();
+    if (game.player.can_jump) {
+        game.key.up = true;
+        game.player.can_jump = false;
+    }
+});
+document.getElementById('jump-btn').addEventListener('touchend', function(event) {
+    event.preventDefault();
+    game.key.up = false;
 });
